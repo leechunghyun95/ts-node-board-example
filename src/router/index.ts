@@ -3,7 +3,7 @@ const router = Router();
 
 router.get("/", (req: Request, res: Response, next: NextFunction) => {
   try {
-    res.send("hello west mart!");
+    res.send("hello neo's first ts-node-server!");
   } catch (err) {
     next(err);
   }
