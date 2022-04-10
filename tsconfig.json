@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "lib": ["es2015", "es2016", "es2017", "es2018", "es2019", "es2020"],
+    "target": "es2017",
+    "outDir": "dist",
+    "baseUrl": "src",
+    "rootDir": "./",
+    "alwaysStrict": true,
+    "noImplicitAny": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "paths": {
+      "@router/*": ["router/*"],
+      "@service/*": ["service/*"],
+      "@repository/*": ["repository/*"],
+      "@model/*": ["model/*"],
+      "@payload/*": ["payload/*"],
+      "@middleware/*": ["middleware/*"],
+      "@validate/*": ["validate/*"],
+      "@constant/*": ["constant/*"],
+      "@util/*": ["util/*"],
+      "@error/*": ["error/*"],
+      "@config/*": ["config/*"]
+    },
+    "typeRoots": ["./@types"],
+    "types": ["node", "lodash", "express"]
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules"]
+}
