@@ -16,7 +16,7 @@ const sequelize = new Sequelize({
   dialectOptions: { decimalNumbers: true },
   username: username,
   password: password,
-  repositoryMode: true,
+  repositoryMode: false,
   models: ["../model/*.ts"],
   dialect: "mysql",
   sync: {
