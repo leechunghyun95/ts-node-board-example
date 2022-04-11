@@ -34,5 +34,15 @@ router.post(
 // /auth/login으로 접근시
 // 1. 로그인 유효성 검사
 // 2. authService에서 login메서드 가져오기
+router.post(
+  "/login",
+  asyncWrapper(async (req: Request, res: Response) => {
+    const loginDto = req.body as LoginDto;
+
+    await authService.login(loginDto);
+
+    res.status(HttpStatus.OK).send();
+  })
+);
 
 export default router;
