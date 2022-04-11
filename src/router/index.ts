@@ -1,4 +1,5 @@
 import { Request, Response, NextFunction, Application, Router } from "express";
+import authRouter from "@router/auth_router";
 const router = Router();
 
 router.get("/", (req: Request, res: Response, next: NextFunction) => {
@@ -9,6 +10,9 @@ router.get("/", (req: Request, res: Response, next: NextFunction) => {
   }
 });
 
-const setRouter = (express: Application): void => {};
+const setRouter = (express: Application): void => {
+  // /auth라는 url요청이 들어오면 authRouter로 연결
+  express.use("/auth", authRouter);
+};
 
 export default setRouter;

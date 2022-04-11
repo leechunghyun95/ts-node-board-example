@@ -1,5 +1,6 @@
 import { Sequelize } from "sequelize-typescript";
 import config from "@config/database";
+import User from "@model/user";
 
 const env = (process.env.NODE_ENV as "prod" | "local" | "dev") || "dev";
 
@@ -16,7 +17,7 @@ const sequelize = new Sequelize({
   username: username,
   password: password,
   repositoryMode: true,
-  models: ["/src/model/*.ts"],
+  models: ["../model/*.ts"],
   dialect: "mysql",
   sync: {
     force: false,
@@ -32,7 +33,7 @@ const sequelize = new Sequelize({
   ssl: true,
 });
 
-sequelize.addModels([]);
+sequelize.addModels([User]);
 
 export { sequelize };
 export default sequelize;
