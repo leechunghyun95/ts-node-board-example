@@ -1,7 +1,7 @@
 export interface UserDetail {
   id: number;
   email: string;
-  nickname: string;
+  name: string;
 }
 
 export interface UserJoinForm {
@@ -12,8 +12,8 @@ export interface UserJoinForm {
 
 export interface UserUpdateForm {
   email: string;
-  nickname: string;
   password: string;
+  name: string;
 }
 
 export interface LoginDto {
@@ -22,7 +22,7 @@ export interface LoginDto {
 }
 
 export interface UserSummary {
-  id: number;
+  idx: number;
   email: string;
-  nickname: string;
+  name: string;
 }
