@@ -11,6 +11,8 @@ import {
   Unique,
   Model,
 } from "sequelize-typescript";
+
+import Post from "@model/post";
 import BaseModel from "@model/base_model";
 
 @Table({
@@ -34,4 +36,7 @@ export default class User extends Model {
   @AllowNull(false)
   @Column(DataType.CHAR)
   password!: string;
+
+  @HasMany(() => Post)
+  posts: Post[];
 }

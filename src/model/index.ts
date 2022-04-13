@@ -1,7 +1,7 @@
-import { Sequelize } from "sequelize-typescript";
+import { Scopes, Sequelize } from "sequelize-typescript";
 import config from "@config/database";
 import User from "@model/user";
-
+import Post from "@model/post";
 const env = (process.env.NODE_ENV as "prod" | "local" | "dev") || "dev";
 
 const { host, database, username, password } = config[env];
@@ -23,7 +23,7 @@ const sequelize = new Sequelize({
     force: false,
   },
   define: {
-    timestamps: true,
+    timestamps: false,
     underscored: true,
     paranoid: true,
     collate: "utf8_general_ci",
@@ -33,7 +33,7 @@ const sequelize = new Sequelize({
   ssl: true,
 });
 
-sequelize.addModels([User]);
+sequelize.addModels([User, Post]);
 
 export { sequelize };
 export default sequelize;
